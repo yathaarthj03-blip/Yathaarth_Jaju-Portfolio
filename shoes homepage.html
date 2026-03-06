@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Shoes homepage </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <style>
+                body{
+                    height: 520vh;
+                    margin: 0;
+                    padding: 0;
+                }
+                body::before{
+                  content: '';
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: rgb(163, 162, 162);
+                  filter: brightness(140%);
+                  z-index: -1;
+                }
+               
+                .topnav{
+                  width: 100%;
+                  bottom: 620px;
+                  background-color: #3737372d;
+                    backdrop-filter: blur(5px);
+                    position: fixed;
+                    z-index: 999;
+                    display: flex;
+                    padding: 20px 50px 4px;
+                    font-size: 20px;
+                    justify-content: center;
+                    align-items: center;
+                    left: 2px;
+                    padding-left: 20px;
+                }
+              
+                ul{
+                    margin-left: 325px;
+                    padding: 0;
+                    list-style: none;
+                    overflow: hidden;
+                    gap: 30px;
+                }
+                li{
+                    padding: 8px 10px;
+                    float: right;
+                }
+                li a{
+                    font-size: 24px;
+                    text-align: center;
+                    cursor: pointer;
+                     display: block;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    transition: 0.3s ease;
+                    color: #05337e;
+                    font-weight: bold;
+                    text-shadow: none;
+                      opacity: 0.3s ease-in-out;
+                }
+                li a:hover, li a.active{
+                border-radius: 16%;
+                    color:#05337e;
+                    font-size: 26px;
+                    text-shadow: 0 0 2px rgb(86, 242, 242, 0.2),
+                    0 0 6px #152b4e76;
+                    transition: text-shadow 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+                    }
+
+                .logo{
+                    color: black;
+                    margin-left: 65px;
+                    margin-top: 10px;
+                    font-size: 32px;
+                }
+                #loginbtn{
+                    font-family: 'Times New Roman', Times, serif;
+                    margin-left: 20px;
+                    display: block;
+                    gap: 10px;
+                    padding: 8px 15px;
+                    cursor: pointer;
+                    border: 2px solid black;
+                    border-radius: 12px;
+                    font-size: 18px;
+                    color: black;
+                    background-color: transparent;
+                    transition: .3s ease-in;
+                    text-decoration: none;
+                }
+                #loginbtn:hover{
+                    text-decoration: none;
+                    background-color: black;
+                    color:white;
+                }
+                 #signupbtn{
+                    font-family: 'Times New Roman', Times, serif;
+                    margin-left: 20px;
+                    display: block;
+                    gap: 10px;
+                    padding: 8px 15px;
+                    cursor: pointer;
+                    border: 2px solid black;
+                    border-radius: 12px;
+                    font-size: 18px;
+                    color: black;
+                    background-color: transparent;
+                    transition: .3s ease-in;
+                    text-decoration: none;
+                }
+                #signupbtn:hover{
+                    text-decoration: none;
+                    background-color: black;
+                    color: white;
+                }
+
+                /*menu css*/
+                .menu { position: relative; display: inline-block; }
+
+                  .main-item { 
+                    cursor: pointer; 
+                    display: inline-flex; 
+                    align-items: center; 
+                  }
+
+                  .main-item img { 
+                    display:block; 
+                    width: 60px; 
+                    height:60px; 
+                    border-radius:8px;
+                    margin-top: 18px; 
+                  }
+
+                  .sub-menu {
+                    position: absolute;
+                    left: 0;
+                    top: calc(100% + 8px);
+                    height: 420px;
+                    width: 300px;
+                    max-height: 80vh;
+                    padding: 16px 0;
+                    background: rgba(255,255,255,0.95);
+                    border-radius: 6px;
+                    box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    visibility: hidden;
+                    opacity: 0;
+                    transform: translateY(-6px);
+                    transition: visibility 0s linear .12s, opacity .12s ease, transform .12s ease;
+                    z-index: 999;
+                    overflow:auto;
+                  }
+
+                  .sub-menu.open {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: translateY(0);
+                    transition-delay: 0s;
+                  }
+
+                  .item {
+                    padding: 10px 16px;
+                    text-decoration: none;
+                    color:#05337e;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    font-size: 21px;
+                  }
+                  .item:hover { background: #f7f7f7; }
+
+                  .item img.avatar{ 
+                    width:64px; 
+                    height:64px; 
+                    border-radius:50%; 
+                    object-fit:cover; 
+                  }
+
+            .social{
+              flex-direction: column;
+              position: fixed;
+              z-index: 1000;
+              bottom: 2rem;
+              right: 2rem;
+              display: flex;
+              gap: 2rem;
+            }          
+                  .social-media {
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 2.5rem;
+              aspect-ratio: 1;
+              font-size: 1.2rem;
+              color: white;
+              background-color: #373737 ;
+              border-radius: 50%;
+              cursor: pointer;
+              transition: color 0.5s ease-in-out;
+              --fill: 0%;
+            }
+
+            .social-media::after {
+              content: '';
+              position: absolute;
+              z-index: -1;
+              inset: -3px;
+              border-radius: inherit;
+              background: conic-gradient(transparent 0%, transparent 100%);
+              transition: --fill 0.6s ease-in-out;
+            }
+
+            .social-media.youtube:hover {
+              color: red;
+              --fill: 100%;
+            }
+            .social-media.youtube::after {
+              background: conic-gradient(red var(--fill), transparent var(--fill));
+            }
+
+            .social-media.twitter:hover {
+              color: #1DA1F2;
+              --fill: 100%;
+            }
+            .social-media.twitter::after {
+              background: conic-gradient(#1DA1F2 var(--fill), transparent var(--fill));
+            }
+
+            .social-media.instagram:hover {
+              color: rgb(251, 67, 251);
+              --fill: 100%;
+            }
+            .social-media.instagram::after {
+              background: conic-gradient(rgb(251, 67, 251), var(--fill), transparent var(--fill));
+            }
+
+          .container1{
+            position: relative;
+          }
+          .bgimage{
+          opacity: 0.4;
+            filter: brightness(89%);
+            position: relative;
+            margin-left: 440px;
+            z-index: 0;
+            margin-top: 40px;
+          }
+          .bgtext{
+            z-index: 1;
+            top: 320px;
+            position: absolute;
+            letter-spacing: 5px;
+            opacity: 1;
+            font-size: 120px;
+            margin-left: 480px;
+          }
+          
+         .line{
+          bottom: 120px;
+          position: relative;
+          background-color: black;
+          height: 3px;
+          width: 380px;
+          margin-left: 125px;
+         }
+         p{
+          bottom: 120px;
+          position: absolute;
+          letter-spacing: 2px;
+          color: white;
+          margin-left: 630px;
+         }
+         .para2{
+         font-size: 25px;
+          bottom: 40px;
+          position: absolute;
+          letter-spacing: 2px;
+          color: white;
+          margin-left: 480px;
+         }
+
+         /*second content*/
+         .pagetitle{
+            font-weight: bold;
+            color:#05337e;
+            font-size: 75px;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 2px;
+        }
+        .pagecontent{
+          margin-top: 32px;
+            color: #05337e;
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+        .pagevideo{
+            border-radius: 0 20% 0 20%;
+            margin-top: -480px;
+            margin-right: -100px;
+          
+        }
+         .newcoll{
+          text-shadow: 1px 2px 3px grey;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          color: #152b4e;
+          text-align: center;
+          font-size: 3rem;
+          letter-spacing: 3px;
+          word-spacing: 5px;
+        }
+        .newslide{
+          height: 270vh;
+          border-radius: 8px;
+          margin-top: 50px;
+          background-color: #D3D3D3;
+        }
+        .newslide{
+          margin-top: 280px;
+        }
+        .collpara{
+          color: #000;
+                   text-shadow: 2px 2px 3px grey;
+          font-weight: bold;
+          text-align: center;
+          font-size: 20px;
+          letter-spacing: 2px;
+          word-spacing: 8px;
+          font-family: 'Times New Roman', Times, serif;
+          bottom: -1630px;
+          left: -380px;
+        }
+        /*newcoll cards*/
+        .container{
+          display:grid;
+          place-items: center;
+          margin-inline: 1rem;
+          padding-block: 3rem;
+          margin-top: 64px;
+        }
+        
+        .container{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .card{
+          transition: transform 0.3s ease;
+        }
+        .card img{
+          position: relative;
+          height: 56vh;
+          width: 25vw;
+          border-radius: 3px;
+          margin: 0vh 8vh;
+          box-shadow: 4px 5px 15px black;
+          transition: transform .5s ;
+        }
+       
+        img,
+        .inbox {
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .card:hover img {
+          cursor: pointer;
+          transform: scale(1.1);
+          opacity: 0.5;
+        }
+        .inbox{
+          color: #1a1a1a;
+          height: 30vh;
+          width: 21vw;
+          text-shadow: 0 0 5px #ffffff, 0 0 10px #00bfff, 0 0 20px #2ecc71;
+          margin: 9vh;
+          position: absolute;
+          top: 356vh;
+          z-index: 1;
+          opacity: 0;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .card:hover .inbox {
+          cursor: pointer;
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1); 
+        } 
+        .bestfashion{
+          margin-top: -1950px;
+          border-radius: 20% 0 0 0;
+           float: left;
+            width: 600px;
+            height: 650px;
+            margin-left: 50px;
+        }
+        .pagetitle{
+          margin-top: -72px;
+          width: 640px;
+          color: white;
+          font-size: 96px;
+          font-family: 'Times New Roman', Times, serif;
+        }
+        .pagepara{
+          font-size: 24px;
+          color: white;
+          font-family: 'Times New Roman', Times, serif;
+          width: 560px;
+          left: -600px;
+        }
+        .pagevideo{
+          width: 600px;
+          height: 600px;
+          margin-left: 600px;
+          float: left;
+        }
+        .cardbutton{
+          border: 2px solid black;
+          color: black;
+          transition: 0.3s ease-in;
+          border-radius: 16px;
+          padding: 15px 20px 15px 20px;
+        }
+        .cardbutton:hover{
+          color: white;
+          background: black;
+        }
+
+        .card-new {
+        width: 320px;
+        padding: 32px;
+        padding-bottom: -500px;
+        background: #fff;
+        border: 8px solid #152d54;
+        box-shadow: 15px 15px 0 #282828ba;
+        transform: rotate(-2deg);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        }
+        .card-new:active {
+        animation: shake 0.5s ease-in-out;
+        }
+        .card-new:hover {
+        transform: rotate(0deg) scale(1.02);
+        box-shadow: 20px 20px 0 #000;
+        }
+        
+        .banner {
+        position: absolute;
+        top: 3px;
+        right: -95px;
+        background: #000;
+        color: #fff;
+        padding: 15px;
+        width: 350px;
+        text-align: center;
+        transform: rotate(45deg);
+        font-weight: bold;
+        font-size: 18px;
+        letter-spacing: 2px;
+        overflow: hidden;
+        transition: background 0.5s ease;
+        }
+        .banner-text {
+        display: inline-block;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        width: 100%;
+        position: absolute;
+        left: 13%;
+        top: 50%;
+        transform: translateY(-50%);
+        }
+        .banner:hover .banner-text:first-child {
+          opacity: 0;
+          transform: translateY(-100%);
+        }
+        .banner:hover .banner-text:last-child {
+          opacity: 1;
+          transform: translateY(-40%);
+        }
+        .banner-text:last-child {
+          opacity: 0;
+          transform: translateY(60%);
+          color: black;
+        }
+        .banner:hover {
+          background: cyan;
+        }
+        .card__title {
+          font-size: 24px;
+          font-weight: 700;
+          color: #000;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+          display: block;
+          border-bottom: 2px solid #000;
+          width: 60%; /* or any other percentage or pixel value */
+        }
+
+        .button {
+          border: 4px solid #000;
+          background: #000;
+          color: #fff;
+          padding: 0 8px 15px 8px;
+          font-size: 15px;
+          font-weight: bold;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          margin-top: 180px;
+        }
+        .button:hover {
+          background: #fff;
+          color: #000;
+          transform: translateY(-5px);
+          box-shadow: 0 5px 0 #000;
+        }
+        .button:active {
+          animation: shake 0.5s ease-in-out;
+          transform: translateY(0);
+          box-shadow: none;
+        }
+        @keyframes shake {
+          0% {
+            transform: translateX(0);
+          }
+          25% {
+            transform: translateX(-5px);
+          }
+          50% {
+            transform: translateX(5px);
+          }
+          75% {
+            transform: translateX(-5px);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        .button {
+          --width: 100px;
+          --height: 35px;
+          --tooltip-height: 35px;
+          --tooltip-width: 90px;
+          --gap-between-tooltip-to-button: 18px;
+          --button-color: #222;
+          --tooltip-color: #fff;
+          width: var(--width);
+          height: var(--height);
+          background: var(--button-color);
+          position: relative;
+          text-align: center;
+          border-radius: 0.5em;
+          font-family: "Arial";
+          transition: background 0.7s;
+        }
+
+        .button::before {
+          position: absolute;
+          content: attr(data-tooltip);
+          width: var(--tooltip-width);
+          height: var(--tooltip-height);
+          background-color: #555;
+          font-size: 0.9rem;
+          color: #fff;
+          border-radius: 0.25em;
+          line-height: var(--tooltip-height);
+          bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+          left: calc(50% - var(--tooltip-width) / 2);
+        }
+
+        .button::after {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          border: 10px solid transparent;
+          border-top-color: #555;
+          left: calc(50% - 10px);
+          bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+        }
+
+        .button::after,
+        .button::before {
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.5s;
+        }
+
+        .text {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .button-wrapper,
+        .text,
+        .icon {
+          overflow: hidden;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          color: #fff;
+        }
+
+        .text {
+          top: 0;
+        }
+
+        .text,
+        .icon {
+          transition: top 0.5s;
+        }
+
+        .icon {
+          color: #fff;
+          top: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .icon svg {
+          width: 24px;
+          height: 24px;
+        }
+
+        .button:hover {
+          background: #222;
+        }
+
+        .button:hover .text {
+          top: -100%;
+        }
+
+        .button:hover .icon {
+          top: 0;
+        }
+
+        .button:hover:before,
+        .button:hover:after {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .button:hover:after {
+          bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+        }
+
+        .button:hover:before {
+          bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+        }
+  
+        .bestfashionpara{
+          color: #000;
+          width: 600px;
+          font-size: 100px;
+          font-weight: 750;
+          font-family: 'Times New Roman', Times, serif;
+          margin-top: -1850px;
+          display: flex;
+          position: relative;
+          transform: translateX(70px);
+          margin-left: 700px;
+        }
+        .bestfashionpara2{
+          color: #000;
+          font-size: 20px;
+          font-weight: 575;
+          font-family: 'Times New Roman', Times, serif;
+          position: relative;
+          display: flex;
+          width: 500px;
+           transform: translateX(70px);
+          margin-left: 720px;
+          margin-top: -60px;
+        }
+
+        .stats-container{
+          transform: translateX(-50px) translateY(-150px);
+          margin-left: 650px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: rgba(0, 0, 0, 0.4);
+          color: black;
+          padding: 30px 40px;
+          border-radius: 5px;
+          width: 80%;
+          max-width: 400px;
+        }
+        .stats-box{
+          flex: 1;
+          text-align: center;
+          padding: 0 20px;
+          position: relative;
+        }
+
+        .stats-box:not(:last-child)::after{
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 90%;
+          width: 1px;
+          background: white;
+        }
+
+      .stats-box h2{
+        font-size: 30px;
+        margin: 0;
+        font-weight: bold;
+        color: black;
+      }
+      .stats-box p{
+        margin: 6px 0 0;
+        font-size: 14px;
+        letter-spacing: 1px;
+        color: black;
+        top: 30px;
+      }
+
+         .intro{
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(27, 27, 27, 0.5);
+            color: white;
+            padding: 10px;
+            transition: 0.5s;
+            height: 10px;
+            overflow: hidden;
+         }
+
+        .bestsellers{
+          bottom: 150px;
+          margin-left: 82px;
+          width: 380px;
+          height: 100px;
+          position: relative;
+          display: flex;
+          place-content: center;
+          place-items: center;
+          overflow: hidden;
+          border-radius: 20px;
+        }
+        .bestsellers h1{
+          z-index: 1;
+          color:#05337e;
+          font-size: 3em;
+        }
+        
+        .carousel{
+          border-radius: 10px;
+          margin-top: 500px;
+          margin-left: 5px;
+          overflow: hidden;
+          width: 1500px;
+          background-color: transparent;
+          backdrop-filter: blur(20px);
+        }
+
+        .wrap{
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: 850px;
+          justify-items: stretch;
+          animation: slide 15s linear infinite;
+        }
+        .wrap img{
+          width: 800px;
+          height: 550px;
+          border-radius: 10px;
+          object-fit: cover;
+        }
+
+        @keyframes slide{
+          to {translate: calc(-5 * 350px);}
+        }
+
+        footer{
+          position: relative;
+          width: 100%;
+          background:#05337e;
+          height: 320px;
+          top: 128px;
+          padding: 20px 0;
+        }
+        footer p{
+          letter-spacing: 3px;
+          margin-top: 120px;
+          margin-bottom: -50px;
+          margin-right: 800px;
+          margin-left: 450px;
+          line-height: 20px;
+          font-size: 20px;
+          color: white;
+          text-align: center;
+          width: 700px;
+        }
+       
+        .login-pop{
+          display: none;
+          position: fixed;
+          top: 380px;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(25px);
+          text-align: center;
+          padding: 16px 72px;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+          width: 300px;
+          z-index: 1000;
+          flex-direction: column;
+          padding-top: 2px;
+        }
+        .login-pop input{
+          position: relative;
+          width: 100%;
+          padding: 16px 12px;
+          outline: none;
+          border-radius: 10px;
+          background: none;
+          border-bottom: solid 2px black;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+        }
+        
+        
+        .login-pop #btn{
+                    font-family: 'Times New Roman', Times, serif;
+                    margin-left: 100px;
+                    display: block;
+                    padding: 10px 30px;
+                    cursor: pointer;
+                    border: 2px solid rgba(255, 255, 255, 0.777);
+                    border-radius: 12px;
+                    font-size: 18px;
+                    color: white;
+                    background-color: #05337e;
+                    transition: .3s ease-in;
+                    text-decoration: none;
+                }
+                #btn:hover{
+                    text-decoration: none;
+                    background-color: white;
+                    color: black;
+                }
+  
+        .overlay {
+        display: none;             
+        position: fixed;
+        top: 0;
+        left: -10px;
+        width: 110vw;
+        height: 110vh;
+        background: rgba(0,0,0,0.3);     
+        backdrop-filter: blur(5px);       
+        -webkit-backdrop-filter: blur(50px);
+        transition: opacity 0.3s ease;
+        z-index: 900;
+        }
+        .overlay.show{
+          display: block;
+          opacity: 1;
+        }
+        .close-btn{
+          margin-left: 335px;
+          transform: translateY(-100px);
+          cursor: pointer;
+          font-weight: bold;
+          color: black;
+          font-size: 35px;
+          transition: text-shadow .5s ease;
+        }
+        .close-btn:hover{
+          text-shadow: 0 0 8px #D3D3D3;
+        }
+
+
+        .signup-pop{
+          display: none;
+          position: fixed;
+          top: 380px;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(25px);
+          text-align: center;
+          padding: 16px 72px;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+          width: 300px;
+          z-index: 1000;
+          flex-direction: column;
+          padding-top: 2px;
+        }
+        .signup-pop input{
+          position: relative;
+          width: 100%;
+          padding: 16px 12px;
+          outline: none;
+          border-radius: 10px;
+          background: none;
+          border-bottom: solid 2px black;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+        }
+        .signup-pop input::placeholder{
+          font-size: 16px;
+          color: rgba(0, 0, 0, 0.7);
+        }
+        .signup-pop #btn{
+                    font-family: 'Times New Roman', Times, serif;
+                    margin-left: 100px;
+                    display: block;
+                    padding: 10px 30px;
+                    cursor: pointer;
+                    border: 2px solid rgba(255, 255, 255, 0.777);
+                    border-radius: 12px;
+                    font-size: 18px;
+                    color: white;
+                    background-color: #05337e;
+                    transition: .3s ease-in;
+                    text-decoration: none;
+                }
+                #btn:hover{
+                    text-decoration: none;
+                    background-color: white;
+                    color: black;
+                }
+  
+        .overlay2 {
+        display: none;             
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.3);     
+        backdrop-filter: blur(5px);       
+        -webkit-backdrop-filter: blur(50px);
+        transition: opacity 0.3s ease;
+        z-index: 900;
+        }
+        .overlay2.show{
+          display: block;
+          opacity: 1;
+        }
+        .close-btn{
+          margin-left: 335px;
+          transform: translateY(-100px);
+          cursor: pointer;
+          font-weight: bold;
+          color: black;
+          font-size: 35px;
+          transition: text-shadow .5s ease;
+        }
+        .close-btn:hover{
+          text-shadow: 0 16px 24px #D3D3D3;
+        }
+
+        #user-container{
+          display: none;
+          margin-left: 140px;
+        }
+        .user-logo{
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+        .form-control {
+        position: relative;
+        margin: 20px 0 40px;
+        width: 320px;
+        }
+
+        .form-control input {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px #111 solid;
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        font-size: 18px;
+        color: #111;
+        }
+
+        .form-control input:focus,
+        .form-control input:valid {
+         outline: 0;
+        border-bottom-color: #0b4db8;
+        }
+
+        .form-control label {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        pointer-events: none;
+        }
+
+      .form-control label span {
+      display: inline-block;
+      font-size: 18px;
+      min-width: 5px;
+      color: black;
+      transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      .form-control input:focus+label span,
+      .form-control input:valid+label span {
+      color: #05337e;
+      transform: translateY(-30px);
+      }
+
+        .loader-button {
+          width: 180px;
+          height: 55px;
+          border-radius: 50px;
+          border: solid 4px rgba(255, 255, 255, 0);
+          background-clip: padding-box;
+          box-shadow: 0 4px 20px -2px rgba(39, 94, 254, 0.5);
+          background-color: hsl(241deg 44% 49%);
+          font-size: 20px;
+          letter-spacing: 1px;
+          font-weight: 100;
+          position: relative;
+          cursor: pointer;
+          color: white;
+        }
+
+        .loading {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 7px;
+          z-index: 0;
+        }
+
+        .loading i {
+          width: 5px;
+          height: 5px;
+          background-color: white;
+          display: inline-flex;
+          border-radius: 100%;
+          animation-name: loading5234;
+          animation-iteration-count: infinite;
+          animation-duration: 1s;
+        }
+
+        @keyframes loading5234 {
+          100% {
+            opacity: 0;
+          }
+        }
+
+        #checkbox:checked + .loader-button {
+          transition-delay: 2s;
+          background-color: #31cb20;
+          box-shadow: 0 4px 20px -2px rgb(49 203 32);
+        }
+
+        .title {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+          width: 100%;
+          display: block;
+          font-size: 15px;
+        }
+
+        .approved {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+          width: 100%;
+          display: block;
+          font-size: 15px;
+        }
+
+
+        .loader-button .title {
+          background-color: hsl(241deg 44% 49%);
+          width: 90%;
+        }
+
+        #checkbox:checked + .loader-button .approved {
+          transition-delay: 2s;
+          visibility: visible;
+          opacity: 1;
+          background-color: #31cb20;
+          width: 90%;
+        }
+
+        #checkbox:checked + .loader-button .title {
+          visibility: hidden;
+          opacity: 0;
+          transition: all .5s ease;
+        }
+
+        #checkbox:not(:checked) + .loader-button .approved {
+          visibility: hidden;
+          opacity: 1;
+        }
+
+        #checkbox {
+          position: absolute;
+          left: 50%;
+          top: 92%;
+          transform: translate(-50%,-50%);
+          z-index: 999;
+          outline: none;
+          width: 210px;
+          height: 60px;
+          border-radius: 50px;
+          margin: 0;
+          opacity: 0;
+          cursor: pointer;
+        }
+        </style>
+    </head>
+    <body>
+      <!--navigation bar-->
+        <div class="topnav">
+
+          <!--menu section-->
+             <div class="menu">
+              <div class="main-item" id="menu-toggle" aria-haspopup="true" aria-expanded="false" title="Open menu">
+                <img src="mattkis circular logo.png" alt="menu toggle">
+              </div>
+
+              <nav class="sub-menu" id="menu" role="menu" aria-hidden="true">
+                <a href="#" class="item" role="menuitem">
+                  <img src="userlogo.jpeg" class="avatar" alt="user avatar">
+                  <span style="font-size:24px; align-self:center;">User</span>
+                </a>
+                <a href="#" class="item" role="menuitem">Account</a>
+                <a href="#" class="item" role="menuitem">Cart</a>
+                <a href="#" class="item" role="menuitem">History</a>
+                <a href="#" class="item" role="menuitem">Blog</a>
+                <a href="#" class="item" role="menuitem">Settings</a>
+                <a href="#" class="item" role="menuitem">FAQ</a>
+              </nav>
+            </div>
+      <!--logo-->
+        <div class="logo"> MΛƬƬ <span class="textslider">
+          <span style="color: #05337e;" class="span1">KIX
+          </span> 
+          </div>
+          <!--navbar-->
+            <ul id="nav-menu">
+                <li> <a href="shoes contact page.html">  Contact us </a></li>
+                <li> <a href="shoes about us page.html">  About us </a></li>
+                <li> <a href="shoes store page.html">  Store </a></li>
+                <li> <a href="shoes homepage.html" class="active">  Home </a></li>
+            </ul>
+            <!--login/signup-->
+            <button type="button" id="loginbtn"> Login </button>
+            <div class="overlay" id="overlay"></div>
+
+            <div class="login-pop" id="loginpop">
+              <span class="close-btn" id="closebtn">
+                &times;
+                </span>
+              </div>
+
+            <button type="button" id="signupbtn"> Sign Up </button>
+            <div class="overlay" id="overlay2"></div>
+
+            <div class="signup-pop" id="loginpop">
+              <span class="close-btn" id="closebtn">
+                &times;
+                </span>
+              </div>
+
+              <!--userlogo-->
+              <div id="user-container"> 
+                <img src="userlogo.jpeg" alt="" class="user-logo">
+                </div>
+        </div>
+        <!--social media-->
+        <div class="social">
+            <a href="#" class="social-media youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="#" class="social-media twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.instagram.com/yathaarth_3/#" class="social-media instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="container1">
+          <!--body bg-->
+        <img src="mattkix logo non circular.png" height="700px" class="bgimage">
+        <div class="bgtext" style="color: black;"> <span>MΛƬƬ</span> <span style="color: #05337e;">KIX</span><br><br><br>
+          <div class="line"></div></div>
+          <p style="font-size: 20px; color: black; font-weight: bold;"> 𝙱𝚞𝚒𝚕𝚝 𝚝𝚘 𝚖𝚘𝚟𝚎. 𝙼𝚊𝚍𝚎 𝚝𝚘 𝚠𝚒𝚗. </p>
+        </div>
+        <p class="para2" style="color: #05337e;"> 𝙎𝙩𝙚𝙥 𝙞𝙣𝙩𝙤 𝙎𝙩𝙮𝙡𝙚. 𝙔𝙤𝙪𝙧 𝘾𝙤𝙢𝙛𝙤𝙧𝙩 𝙔𝙤𝙪𝙧 𝙋𝙧𝙞𝙤𝙧𝙞𝙩𝙮 </p>
+        <br><br><br><br><br><br>
+
+        <!--second content-->
+        <div class="pagecontent">
+            <h1 class="pagetitle" style="color: #000; margin-top: -180px; margin-left: 30px;"> Footwear for People Who Actually Go Places
+            </h1>
+            <p class="pagepara" style="color: #000; top: 1160px;">
+                Tired of basic shoes for basic lives? Good. 
+                Ours aren’t for standing still or playing it safe. 
+                They’re built to turn heads, crush pavement, and maybe a few egos. 
+                If you're looking for soft, quiet, and forgettable—try the other guys. 
+                We’re here to make your feet impossible to ignore.
+            </p>
+
+            <!--page video-->
+            <video src="store page video.mp4" class="pagevideo" autoplay loop muted style="margin-left: 900px;" width="600px" height="700px"></video>
+          </div>
+        </div>
+
+        <!--new collection slide-->
+         <div class="newslide"><br>
+            <h1 class="newcoll" style="margin-top: 800px;"> 
+            New Collection
+            </h1>
+            <p class="collpara"> Step into style with our new collection of shoes 
+              where comfort meets cutting-edge design. </p>
+              <!--new collection cards-->
+              <div class="container"> 
+
+                <div class="card-new" style="background: url(store\ card\ hover1.jpg); background-size: cover; background-repeat: no-repeat; 
+                background-position: center; margin-right: 80px;">
+                <div class="banner">
+                <span class="banner-text">NEWCOMERS</span>
+                <span class="banner-text">MATTKIX</span>
+                </div>
+                <span class="card__title">Air Jordans Retro </span>
+  
+               <div class="button" data-tooltip="PRICE $299">
+                <div class="button-wrapper">
+                  <div class="text">Add To Cart</div>
+                  <span class="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-cart2"
+                      viewBox="0 0 16 16"
+      >
+                    <path
+                      d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
+                    ></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+                </div>
+
+                <div class="card-new" style="background: url(store\ card\ hover2.jpg); background-size: cover; background-repeat: no-repeat; 
+                background-position: center;">
+                <div class="banner">
+                <span class="banner-text">NEWCOMERS</span>
+                <span class="banner-text">MATTKIX</span>
+                </div>
+                <span class="card__title">Air Jordans Funky </span>
+  
+               <div class="button" data-tooltip="PRICE $450" style="margin-top: 190px;">
+                <div class="button-wrapper">
+                  <div class="text">Add To Cart</div>
+                  <span class="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-cart2"
+                      viewBox="0 0 16 16"
+      >
+                    <path
+                      d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
+                    ></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+                </div>
+
+                <div class="card-new" style="background: url(store\ card\ hover3.jpg); background-size: cover; background-repeat: no-repeat; 
+                background-position: center; margin-left: 80px;">
+                <div class="banner">
+                <span class="banner-text">NEWCOMERS</span>
+                <span class="banner-text">MATTKIX</span>
+                </div>
+                <span class="card__title">Air Jordans Classic </span>
+  
+               <div class="button" data-tooltip="PRICE $349" style="margin-top: 190px;">
+                <div class="button-wrapper">
+                  <div class="text">Add To Cart</div>
+                  <span class="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-cart2"
+                      viewBox="0 0 16 16"
+      >
+                    <path
+                      d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
+                    ></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+                </div>
+
+
+                </div>
+              </div>
+
+              <!--best fashion para-->
+            <img src="best fashion shoes.jpg" alt="image" class="bestfashion">
+            <p class="bestfashionpara"> Best Fashion <br> Since 2014 </p>
+            <p class="bestfashionpara2">
+            Since 2014, we’ve been redefining the edge of fashion one step at a time. 
+            Blending precision craftsmanship with bold, street-smart design, our shoes don't just follow trends they set them. 
+            Built for those who move with intention and dress with purpose, we’ve turned everyday wear into a statement of style and confidence. 
+            From the pavement to the spotlight, our journey is stitched into every pair. 
+            This isn’t just fashion it’s a legacy in motion. With every drop, we push boundaries, challenge convention, and elevate the standard of what footwear can be. 
+            Because when you walk with us, you're not just wearing shoes you're making a statement.
+            </p>
+            <br><br>
+            <section class="stats-container">
+              <div class="stats-box">
+                <h2> 2014 </h2>
+                <p> Year Founded </p>
+              </div>
+
+              <div class="stats-box">
+                <h2> 8900+ </h2>
+                <p> Products Sold </p>
+              </div>
+
+              <div class="stats-box">
+                <h2>3100+</h2>
+                <p> Best Reviews </p>
+              </div>
+            </section>
+            <br><br>
+        
+
+        <!--Carousal infinite-->
+        <div class="carousel">
+          <div class="wrap">
+            <img src="offerpage1.jpg" alt="">
+            <img src="offerpage2.jpg" alt="">
+            <img src="offerpage3.jpg" alt="">
+            <img src="offerpage4.jpg" alt="">
+            <img src="offerpage5.jpg" alt="">
+            <img src="offerpage1.jpg" alt="">
+            <img src="offerpage2.jpg" alt="">
+            <img src="offerpage3.jpg" alt="">
+            <img src="offerpage4.jpg" alt="">
+            <img src="offerpage5.jpg" alt="">
+            </div>
+          </div>
+
+          <!--Footer bar-->
+          <footer style="background-color:#222; color:#fff; font-family:Arial, sans-serif;">
+              <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between;">
+              
+              <!-- About Section -->
+              <div style="flex:1; min-width:200px; margin:10px;">
+                <h3 style="margin-top: 10px; margin-bottom: -8px; font-size: 2.5rem; display: flex; margin-left: -100px;">MΛƬƬ <span style="color:#1DA1F2;"> KIX</span></h3>
+                <p style="line-height:1.6; right: 10px; width: 640px; text-align: start; bottom: 150px; font-size: 1rem;">
+                  MattKix is more than just a sneaker brand it’s a bold expression of individuality and creativity. 
+                  Inspired by street culture and modern design, MattKix creates sneakers that merge comfort, style, and innovation.  
+                  Designed for those who dare to stand out, MattKix represents a new era of footwear where every detail reflects passion and purpose.
+             
+               </div>
+              
+              <!-- Contact Information -->
+              <div style="flex:1; min-width:200px; margin:10px;">
+                <h4 style="margin-bottom:-120px; font-size: 2rem; top: 100px; margin-left: 400px; display: flex; margin-top: 10px; margin-right: -400px;">Contact Us</h4>
+                <p style="margin-left: 215px; bottom: 270px; font-size: 1rem;">Email: yathaarthj03@gmail.com</p>
+                <p style="margin-left: 177px; bottom: 300px; font-size: 1rem;">Phone: 91-77000-14486</p>
+              </div>
+              
+              <!-- Newsletter Signup -->
+              <div style="flex:1; min-width:200px; margin-top: 150px; margin-bottom: -150px;">
+                <h4 style="margin-bottom:15px;">Subscribe to our newsletter</h4>
+                <form action="#" method="post" style="display:flex;">
+                  <input type="email" placeholder="Your email" style="padding:10px; flex:1; border:none; border-radius:4px 0 0 4px;">
+                  <button type="submit" style="padding:10px 20px; border:none; background-color:#ff6600; color:#fff; border-radius:0 4px 4px 0; cursor:pointer;">Subscribe</button>
+                </form>
+              </div>
+              
+            </div>
+            <div style="margin-top:220px; text-align:center; font-size:14px; color:#aaaaaa7e;">
+              &copy; 2024 Your Company. All rights reserved.
+            </div>
+          </footer>
+
+                <script>
+
+              /*login JS*/ 
+
+              const loginBtn = document.getElementById('loginbtn');
+              const overlay = document.getElementById('overlay');
+
+              const loginPopup = document.createElement('div');
+              loginPopup.classList.add('login-pop');
+              loginPopup.innerHTML = `
+              <span class="close-btn" id="closeBtn">&times;</span>
+  
+              <h2 style="color:#D3D3D3; text-shadow: 0 0 8px #000; font-family:font-family: 'Montserrat', sans-serif; font-size:45px">Login</h2>
+              <form>
+               
+              <div class="form-control">
+              <input type="value" required="">
+              <label>
+              <span style="transition-delay:0ms">U</span>
+              <span style="transition-delay:0ms">s</span>
+              <span style="transition-delay:0ms">e</span>
+              <span style="transition-delay:0ms">r</span>
+              <span style="transition-delay:0ms">n</span>
+              <span style="transition-delay:0ms">a</span>
+              <span style="transition-delay:0ms">m</span>
+              <span style="transition-delay:0ms">e</span>
+              </label>
+              </div>
+
+               <div class="form-control">
+              <input type="password" required="">
+              <label>
+              <span style="transition-delay:0ms">P</span>
+              <span style="transition-delay:0ms">a</span>
+              <span style="transition-delay:0ms">s</span>
+              <span style="transition-delay:0ms">s</span>
+              <span style="transition-delay:0ms">w</span>
+              <span style="transition-delay:0ms">o</span>
+              <span style="transition-delay:0ms">r</span>
+              <span style="transition-delay:0ms">d</span>
+              </label>
+              </div>
+              <br><br>
+
+              <button type="submit" id="btn"> Login </button>
+              </form>
+`             ;
+              document.body.appendChild(loginPopup);
+
+              loginBtn.addEventListener('click', () => {
+              document.body.classList.add('dimmed');
+              loginPopup.style.display = 'block';
+              overlay.style.display = 'block';
+              setTimeout(() => {
+              loginPopup.classList.add('show');
+              overlay.classList.add('show');
+              }, 10)
+              });
+
+              document.body.addEventListener('click', (e) => {
+              if (
+              e.target.id === 'closeBtn' || 
+              e.target.id === 'overlay'
+              ) {
+              document.body.classList.remove('dimmed');
+              loginPopup.style.display = 'none';
+              overlay.style.display = 'none';
+              }
+              }
+              );
+              /*signup JS*/ 
+
+              const signupBtn = document.getElementById('signupbtn');
+              const overlay2 = document.getElementById('overlay2');
+
+              const signupPopup = document.createElement('div');
+              signupPopup.classList.add('signup-pop');
+              signupPopup.innerHTML = `
+              <span class="close-btn" id="closeBtn">&times;</span>
+  
+              <h2 style="color:#D3D3D3; text-shadow: 0 0 8px #000; font-family: 'Montserrat', sans-serif; font-size:45px">Sign-up</h2>
+              <form>
+
+               <div class="form-control">
+              <input type="value" required="">
+              <label>
+              <span style="transition-delay:0ms">C</span>
+              <span style="transition-delay:0ms">r</span>
+              <span style="transition-delay:0ms">e</span>
+              <span style="transition-delay:0ms">a</span>
+              <span style="transition-delay:0ms">t</span>
+              <span style="transition-delay:0ms">e</span>
+              <span style="transition-delay:0ms"></span>
+              <span style="transition-delay:0ms">a</span>
+               <span style="transition-delay:0ms"></span>
+              <span style="transition-delay:0ms">U</span>
+              <span style="transition-delay:0ms">s</span>
+              <span style="transition-delay:0ms">e</span>
+              <span style="transition-delay:0ms">r</span>
+              <span style="transition-delay:0ms">n</span>
+              <span style="transition-delay:0ms">a</span>
+              <span style="transition-delay:0ms">m</span>
+              <span style="transition-delay:0ms">e</span>
+              </label>
+              </div>
+
+              <div class="form-control">
+              <input type="value" required="">
+              <label>
+              <span style="transition-delay:0ms">E</span>
+              <span style="transition-delay:0ms">n</span>
+              <span style="transition-delay:0ms">t</span>
+              <span style="transition-delay:0ms">e</span>
+              <span style="transition-delay:0ms">r</span>
+              <span style="transition-delay:0ms"></span>
+              <span style="transition-delay:0ms">e</span>
+              <span style="transition-delay:0ms">m</span>
+               <span style="transition-delay:0ms">a</span>
+              <span style="transition-delay:0ms">i</span>
+              <span style="transition-delay:0ms">l</span>
+              
+              </label>
+              </div>
+
+               <div class="form-control">
+              <input type="value" required="">
+              <label>
+              <span style="transition-delay:0ms">C</span>
+              <span style="transition-delay:0ms">r</span>
+              <span style="transition-delay:0ms">e</span>
+              <span style="transition-delay:0ms">a</span>
+              <span style="transition-delay:0ms">t</span>
+              <span style="transition-delay:0ms">e</span>
+              <span style="transition-delay:0ms"></span>
+              <span style="transition-delay:0ms">a</span>
+               <span style="transition-delay:0ms"></span>
+              <span style="transition-delay:0ms">P</span>
+              <span style="transition-delay:00ms">a</span>
+              <span style="transition-delay:0ms">s</span>
+              <span style="transition-delay:0ms">s</span>
+              <span style="transition-delay:0ms">w</span>
+              <span style="transition-delay:0ms">o</span>
+              <span style="transition-delay:0ms">r</span>
+              <span style="transition-delay:0ms">d</span>
+              </label>
+              </div>
+
+
+             <div class="plane-button">
+    <input type="checkbox" name="checkbox" id="checkbox">
+    <button class="loader-button">
+        
+        <span class="loading"> <i></i> <i></i> <i></i></span>
+        <span class="title"> Create Account</span>
+        <span class="approved"> Go to Login </span>
+    </button>
+</div>
+              </form>
+`             ;
+              document.body.appendChild(signupPopup);
+
+              signupBtn.addEventListener('click', () => {
+              document.body.classList.add('dimmed');
+              signupPopup.style.display = 'block';
+              overlay2.style.display = 'block';
+              setTimeout(() => {
+              signupPopup.classList.add('show');
+              overlay2.classList.add('show');
+              }, 10)
+              });
+
+              document.body.addEventListener('click', (e) => {
+              if (
+              e.target.id === 'closeBtn' || 
+              e.target.id === 'overlay2'
+              ) {
+              document.body.classList.remove('dimmed');
+              signupPopup.style.display = 'none';
+              overlay2.style.display = 'none';
+              }
+              }
+              )
+
+              /*user logo*/
+              const usercontainer = document.getElementById('user-container')
+              const navmenu = document.getElementById('nav-menu')
+              document.body.addEventListener('submit', function(e){
+                e.preventDefault();
+                if(e.target.closest('.login-pop'))
+                {
+                  loginBtn.style.display = 'none';
+                  signupBtn.style.display = 'none';
+                  usercontainer.style.display = 'inline-block';
+                  loginPopup.classList.remove('show');
+                  overlay.classList.remove('show');
+                  navmenu.style.marginLeft = '500px';
+
+                  const userLogo = document.createElement('div')
+                  userLogo.classList.add(user-logo)
+                  usercontainer.appendChild(userLogo);
+
+                  const loginPopup = document.querySelector('.login-pop');
+                  const overlay = document.getElementById('overlay')
+                  loginPopup.classList.remove('login-pop');
+                  overlay.classList.remove('overlay'); 
+                  
+                }
+              }
+              )
+                </script>
+
+             <!-- menu JS -->
+              <script>
+              document.addEventListener('DOMContentLoaded', function () {
+              const toggle = document.getElementById('menu-toggle');
+              const menu = document.getElementById('menu');
+
+              if (!toggle || !menu) {
+                console.error('Menu toggle or menu element missing.');
+                return;
+              }
+
+              function openMenu() {
+                menu.classList.add('open');
+                menu.setAttribute('aria-hidden', 'false');
+                toggle.setAttribute('aria-expanded', 'true');
+              }
+              function closeMenu() {
+                menu.classList.remove('open');
+                menu.setAttribute('aria-hidden', 'true');
+                toggle.setAttribute('aria-expanded', 'false');
+              }
+              function toggleMenu(e) {
+                e.stopPropagation();
+                menu.classList.contains('open') ? closeMenu() : openMenu();
+              }
+
+              toggle.addEventListener('click', toggleMenu);
+
+              // close when clicking anywhere else
+              document.addEventListener('click', function (e) {
+                if (!menu.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+              });
+
+              // close on Escape
+              document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeMenu();
+              });
+            });
+              </script>
+              </body></html>

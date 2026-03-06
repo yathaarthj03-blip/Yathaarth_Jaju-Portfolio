@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+         body{
+            background-color: whitesmoke;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 150vh;
+        }
+        .nav-options{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-top: -80px;
+            overflow: hidden;
+            font-size: 1.1rem;
+            margin-left: 34vw;
+            padding-bottom: 10px;
+        }
+
+        .nav-options li{
+            padding-left: 32px;
+            margin-top: 40px;
+            color: rgb(97, 96, 96);
+            float: left;
+            margin-left: 2.8vw;
+            transition: .2s ease-in;
+        }
+
+        .nav-options li:hover{
+            transform: scale(1.05);
+        }
+
+        .item-card1{
+            background: url("webdev\ course\ img.png");
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            scale: 1;
+            transition: .3s ease;
+        }
+        .item-card1:hover{
+            scale: 1.05;
+            cursor: pointer;
+        }
+         .arrow{
+            display: none;
+        }
+        .item-card1:hover .arrow{
+            display: block;
+        }
+        .item-card2{
+            background: url("Coding\ 🧑_💻.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            scale: 1;
+            transition: .3s ease;
+        }
+        .item-card2:hover{
+            scale: 1.05;
+            cursor: pointer;
+        }
+         .arrow{
+            display: none;
+        }
+        .item-card2:hover .arrow{
+            display: block;
+        }
+        .item-card3{
+            background: url("JS\ courses\ img.png");
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            scale: 1;
+            transition: .3s ease;
+        }
+        .item-card3:hover{
+            scale: 1.05;
+            cursor: pointer;
+        }
+         .arrow{
+            display: none;
+        }
+        .item-card3:hover .arrow{
+            display: block;
+        }
+        .item-card4{
+            background: url("adv\ js\ img.png");
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            scale: 1;
+            transition: .3s ease;
+        }
+        .item-card4:hover{
+            scale: 1.05;
+            cursor: pointer;
+        }
+         .arrow{
+            display: none;
+        }
+        .item-card4:hover .arrow{
+            display: block;
+        }
+         .item-card5{
+            background: url("python\ img\ courses.png");
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            scale: 1;
+            transition: .3s ease;
+        }
+        .item-card5:hover{
+            scale: 1.05;
+            cursor: pointer;
+        }
+         .arrow{
+            display: none;
+        }
+        .item-card5:hover .arrow{
+            display: block;
+        }
+         .item-card6{
+            background: url("sql\ courses\ img.png");
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            scale: 1;
+            transition: .3s ease;
+        }
+        .item-card6:hover{
+            scale: 1.05;
+            cursor: pointer;
+        }
+         .arrow{
+            display: none;
+        }
+        .item-card6:hover .arrow{
+            display: block;
+        }
+         #title-ani{
+            animation: title-appear 2s forwards;
+        }
+        #card1-ani{
+            animation: card1-appear .8s forwards;
+            animation-delay: .2s;
+            opacity: 0;
+        }
+        #card2-ani{
+            animation: card2-appear .8s forwards;
+            animation-delay: .3s;
+            opacity: 0;
+        }
+         #card3-ani{
+            animation: card1-appear .8s forwards;
+            animation-delay: .4s;
+            opacity: 0;
+        }
+        #card4-ani{
+            animation: card2-appear .8s forwards;
+            animation-delay: .5s;
+            opacity: 0;
+        }
+         #card5-ani{
+            animation: card1-appear .8s forwards;
+            animation-delay: .6s;
+            opacity: 0;
+        }
+        #card6-ani{
+            animation: card2-appear .8s forwards;
+            animation-delay: .7s;
+            opacity: 0;
+        }
+        /* title animation*/
+        @keyframes title-appear{
+            from{
+                opacity: .2;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+         /* card1 animation*/
+        @keyframes card1-appear{
+            from{
+                transform: scale(.5);
+                opacity: .2;
+            }
+            to{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+         /* card2 animation*/
+        @keyframes card2-appear{
+            from{
+               transform: scale(.5);
+                opacity: .2;
+            }
+            to{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        @keyframes card3-appear{
+            from{
+                transform: scale(.5);
+                opacity: .2;
+            }
+            to{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+         /* card2 animation*/
+        @keyframes card4-appear{
+            from{
+               transform: scale(.5);
+                opacity: .2;
+            }
+            to{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        @keyframes card5-appear{
+            from{
+                transform: scale(.5);
+                opacity: .2;
+            }
+            to{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+         /* card2 animation*/
+        @keyframes card6-appear{
+            from{
+               transform: scale(.5);
+                opacity: 0;
+            }
+            to{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+            <img src="YDC logo.png" height="64px" width="64px" style="margin-left: 40px; margin-top: 16px;">
+            <p style="margin-top: -50px; margin-left: 120px; font-size: 1.2rem; font-weight: 700;color: #173450;">Yathaarth Digital Campus</p>
+        <ul class="nav-options">
+            <a href="LMS-courses.html"><li> Courses </li></a>
+            <a href="LMS-about.html"><li> About </li></a>
+            <a href=""><li> Contact </li></a>
+                <li style="margin-left: 440px; border: solid 2px; padding: 10px 12px 14px 12px; margin-top: 30px; border-radius: 15px; 
+            background: linear-gradient(to bottom right, #0F2A44, #285c8d); font-size: 1.2rem; border: none; color: white; font-weight: 500; cursor: pointer;">
+                 Enroll Now </li></a>
+        </ul></div>
+    </div>
+
+    <div class="main-page">
+        <a href="LMS-courses.html" style="text-decoration: none;"><p style="margin-left: 48px; color: rgb(94, 92, 92);font-size: 1rem; cursor: pointer;"> &larr; Back </p></a>
+            <center><h1 style="font-size: 3.2rem; margin-top: -20px;color: #173450;" id="title-ani"> Web Development</h1></center>
+
+            <!--item-cards-->
+            <!--item-card1-->
+            <a href="" style="text-decoration: none;">
+                <div style="height: 360px; width: 400px; border: 1px solid #0F2A44; border-radius: 20px;box-shadow: 0 0 12px rgba(0, 0, 0, 0.422); 
+                margin-left: 100px; margin-top: 56px;" 
+             class="item-card1" id="card1-ani">
+                <div class="title-box" style="background: white; color: black; width: 400px; height: 160px; margin-top: 200px; border-radius: 20px;">
+                    <p style="margin-left: 32px; font-size: 1.8rem; width: 400px; padding-top: 20px; font-weight: 600;"> HTML - <span style="font-size: 1.4rem; 
+                    color: grey; 
+                    font-weight: 400;"><br>
+                    Structure of the Web</span></p>
+                    <p class="arrow" style="margin-top: -80px; float: right; margin-right: 40px; font-size: 2rem; font-weight: 500; color: #285c8d;"> 
+                        &rarr;</p>
+                        <div class="lecture-box">
+                            <button style="margin-left: 32px; font-size: .8rem; padding: 8px 12px 8px 12px;
+                            background: white; border: 2px solid rgb(222, 217, 217); border-radius: 8px; font-weight: 200;transform: translateY(-16px);">
+                            <i class="fa-solid fa-circle-play"></i>
+                             45 Lectures </button>
+                             <button style="margin-left: 12px; font-size: .8rem; padding: 8px 12px 8px 12px;
+                            background: white; border: 2px solid rgb(224, 221, 221); border-radius: 8px; font-weight: 200;transform: translateY(-16px);">
+                            <i class="fa-solid fa-file-lines"></i> 30 Notes </button>
+                        </div>
+                </div>
+            </div></a>
+             <!--item-card2-->
+            <a href="" style="text-decoration: none;">
+                <div style="height: 360px; width: 400px; border: 1px solid #0F2A44; border-radius: 20px;box-shadow: 0 0 12px rgba(0, 0, 0, 0.422); 
+                margin-left: 547px; margin-top: -363px;"
+             class="item-card2" id="card2-ani">
+                <div class="title-box" style="background: white; color: black; width: 400px; height: 160px; margin-top: 200px; border-radius: 20px;">
+                    <p style="margin-left: 32px; font-size: 1.8rem; width: 400px; padding-top: 20px; font-weight: 600;"> CSS - <span style="font-size: 1.4rem;
+                    font-weight: 400; color: grey;"><br>
+                    Layout Styling</span></p>
+                    <p class="arrow" style="margin-top: -80px; float: right; margin-right: 40px; font-size: 2rem; font-weight: 500; color: #285c8d;"> 
+                        &rarr;</p>
+                         <div class="lecture-box">
+                            <button style="margin-left: 32px; font-size: .8rem; padding: 8px 12px 8px 12px;
+                            background: white; border: 2px solid rgb(222, 217, 217); border-radius: 8px; font-weight: 200;transform: translateY(-16px);">
+                            <i class="fa-solid fa-circle-play"></i>
+                             45 Lectures </button>
+                             <button style="margin-left: 12px; font-size: .8rem; padding: 8px 12px 8px 12px;
+                            background: white; border: 2px solid rgb(224, 221, 221); border-radius: 8px; font-weight: 200;transform: translateY(-16px);">
+                            <i class="fa-solid fa-file-lines"></i> 30 Notes </button>
+                        </div>
+                </div>
+            </div></a>
+            <!--item-card3-->
+            <a href="" style="text-decoration: none;">
+                <div style="height: 360px; float: right; width: 400px; border: 1px solid #0F2A44; border-radius: 20px;box-shadow: 0 0 12px rgba(0, 0, 0, 0.422);
+                margin-top: -363px; margin-right: 100px;"
+             class="item-card3" id="card3-ani">
+                <div class="title-box" style="background: white; color: black; width: 400px; height: 160px; margin-top: 200px; border-radius: 20px;">
+                    <p style="margin-left: 32px; font-size: 1.8rem; width: 400px; padding-top: 20px; font-weight: 600;"> JavaScript - <span style="font-size: 1.4rem;
+                    font-weight: 400; color: grey;"><br>
+                    Frontend Logic</span></p>
+                    <p class="arrow" style="margin-top: -80px; float: right; margin-right: 40px; font-size: 2rem; font-weight: 500; color: #285c8d;"> 
+                        &rarr;</p>
+                         <div class="lecture-box">
+                            <button style="margin-left: 32px; font-size: .8rem; padding: 8px 12px 8px 12px;
+                            background: white; border: 2px solid rgb(222, 217, 217); border-radius: 8px; font-weight: 200;transform: translateY(-16px);">
+                            <i class="fa-solid fa-circle-play"></i>
+                             45 Lectures </button>
+                             <button style="margin-left: 12px; font-size: .8rem; padding: 8px 12px 8px 12px;
+                            background: white; border: 2px solid rgb(224, 221, 221); border-radius: 8px; font-weight: 200;transform: translateY(-16px);">
+                            <i class="fa-solid fa-file-lines"></i> 30 Notes </button>
+                        </div>
+                </div>
+            </div></a> <br>
+
+            <!--item-card4-->
+            <a href="" style="text-decoration: none;">
+                <div style="height: 360px; width: 400px; border: 1px solid #0F2A44; border-radius: 20px;box-shadow: 0 0 12px rgba(0, 0, 0, 0.422); 
+                margin-left: 100px; margin-top: 32px;"
+             class="item-card4" id="card4-ani">
+                <div class="title-box" style="background: white; color: black; width: 400px; height: 160px; margin-top: 200px; border-radius: 20px;">
+                    <p style="margin-left: 32px; font-size: 1.8rem; width: 400px; padding-top: 20px; font-weight: 600;"> Advanced JavaScript & 
+                        Framework Basics <span style="font-size: 1.6rem;"><br>
+                    </span></p>
+                    <p class="arrow" style="margin-top: -80px; float: right; margin-right: 40px; font-size: 2rem; font-weight: 500; color: #285c8d;"> 
+                        &rarr;</p>
+                         <div class="lecture-box">
+                            <button style="margin-left: 32px; font-size: .8rem; padding: 8px 12px 8px 12px;
+                            background: white; border: 2px solid rgb(222, 217, 217); border-radius: 8px; font-weight: 200;transform: translateY(-16px);">
+                            <i class="fa-solid fa-circle-play"></i>
+                             45 Lectures </button>
+                             <button style="margin-left: 12px; font-size: .8rem; padding: 8px 12px 8px 12px;
+                            background: white; border: 2px solid rgb(224, 221, 221); border-radius: 8px; font-weight: 200;transform: translateY(-16px);">
+                            <i class="fa-solid fa-file-lines"></i> 30 Notes </button>
+                        </div>
+                </div>
+            </div></a>
+             <!--item-card5-->
+            <a href="" style="text-decoration: none;">
+                <div style="height: 360px; width: 400px; border: 1px solid #0F2A44; border-radius: 20px;box-shadow: 0 0 12px rgba(0, 0, 0, 0.422); 
+                margin-left: 547px; margin-top: -360px;"
+             class="item-card5" id="card5-ani">
+                <div class="title-box" style="background: white; color: black; width: 400px; height: 160px; margin-top: 200px; border-radius: 20px;">
+                    <p style="margin-left: 32px; font-size: 1.8rem; width: 400px; padding-top: 20px; font-weight: 600;"> Python - <span style="font-size: 1.4rem;
+                    font-weight: 400;"><br>
+                    Backend Programming</span></p>
+                    <p class="arrow" style="margin-top: -80px; float: right; margin-right: 40px; font-size: 2rem; font-weight: 500; color: #285c8d;"> 
+                        &rarr;</p>
+                         <div class="lecture-box">
+                            <button style="margin-left: 32px; font-size: .8rem; padding: 8px 12px 8px 12px;
+                            background: white; border: 2px solid rgb(222, 217, 217); border-radius: 8px; font-weight: 200;transform: translateY(-16px);">
+                            <i class="fa-solid fa-circle-play"></i>
+                             45 Lectures </button>
+                             <button style="margin-left: 12px; font-size: .8rem; padding: 8px 12px 8px 12px;
+                            background: white; border: 2px solid rgb(224, 221, 221); border-radius: 8px; font-weight: 200;transform: translateY(-16px);">
+                            <i class="fa-solid fa-file-lines"></i> 30 Notes </button>
+                        </div>
+                </div>
+            </div></a>
+            <!--item-card6-->
+            <a href="" style="text-decoration: none;">
+                <div style="height: 360px; float: right; width: 400px; border: 1px solid #0F2A44; border-radius: 20px;box-shadow: 0 0 12px rgba(0, 0, 0, 0.422);
+                margin-top: -360px; margin-right: 100px;"
+             class="item-card6" id="card6-ani">
+                <div class="title-box" style="background: white; color: black; width: 400px; height: 160px; margin-top: 200px; border-radius: 20px;">
+                    <p style="margin-left: 32px; font-size: 1.8rem; width: 320px; padding-top: 20px; font-weight: 600;"> SQL - <span style="font-size: 1.4rem;
+                    font-weight: 400;"><br>
+                    Data Handling</span></p>
+                    <p class="arrow" style="margin-top: -80px; float: right; margin-right: 40px; font-size: 2rem; font-weight: 500; color: #285c8d;"> 
+                        &rarr;</p>
+                         <div class="lecture-box">
+                            <button style="margin-left: 32px; font-size: .8rem; padding: 8px 12px 8px 12px;
+                            background: white; border: 2px solid rgb(222, 217, 217); border-radius: 8px; font-weight: 200;transform: translateY(-16px);">
+                            <i class="fa-solid fa-circle-play"></i>
+                             45 Lectures </button>
+                             <button style="margin-left: 12px; font-size: .8rem; padding: 8px 12px 8px 12px;
+                            background: white; border: 2px solid rgb(224, 221, 221); border-radius: 8px; font-weight: 200;transform: translateY(-16px);">
+                            <i class="fa-solid fa-file-lines"></i> 30 Notes </button>
+                        </div>
+                </div>
+            </div></a> <br>
+            <!--Footer line-->
+                    <div style="background: #0F2A44; width: 101%; height: 100px; margin-top: 80px;margin-left: -7px;">
+                    <p style="font-size: 1rem; color: rgb(173, 170, 170); float: left; margin-left: 40px; margin-top: 40px;">
+                     &copy; 2025 Yathaarth Digital Campus. All Rights Reserved.</p>
+
+                     <p style="font-size: 1rem; color: rgb(173, 170, 170); float: right; margin-right: 40px; margin-top: 40px;"> 
+                     Made with ❤️ and lots of coffeee!</p>
+                    </div>  
+
+                </section>
+        </div>
+</body>
+</html>

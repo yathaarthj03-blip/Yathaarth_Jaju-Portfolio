@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Yathaarth Digital Campus </title>
+    <style>
+        body{
+            background-color: whitesmoke;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+         .nav-options{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-top: -80px;
+            overflow: hidden;
+            font-size: 1.1rem;
+            margin-left: 34vw;
+            padding-bottom: 10px;
+        }
+
+        .nav-options li{
+            padding-left: 32px;
+            margin-top: 40px;
+            color: rgb(97, 96, 96);
+            float: left;
+            margin-left: 2.8vw;
+            transition: .2s ease-in;
+        }
+
+        .nav-options li:hover{
+            transform: scale(1.05);
+        }
+        #button{
+            transition: .3s ease;
+            scale: 1;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.511);
+        }
+        #mainpage{
+            scale: .5;
+            opacity: .2;
+            animation: appear 1s forwards;
+            animation-delay: .1s;
+        }
+        @keyframes appear{
+            from{
+                scale: .5;
+                opacity: .2;
+            }
+            to{
+                scale: 1;
+                opacity: 1;
+            }
+        }
+        #button:hover{
+            scale: 1.05;
+            box-shadow: 0 0 16px rgba(0, 0, 0, 0.511);
+        }
+    </style>
+</head>
+<body>
+          <div class="navbar">
+            <img src="YDC logo.png" height="64px" width="64px" style="margin-left: 40px; margin-top: 16px;">
+            <p style="margin-top: -50px; margin-left: 120px; font-size: 1.2rem; font-weight: 700;color: #173450;">Yathaarth Digital Campus</p>
+        <ul class="nav-options">
+            <a href="LMS-courses.html"><li> Courses </li></a>
+            <a href="LMS-about.html"><li> About </li></a>
+            <a href=""><li> Contact </li></a>
+                <li style="margin-left: 440px; border: solid 2px; padding: 10px 12px 14px 12px; margin-top: 30px; border-radius: 15px; 
+            background: linear-gradient(to bottom right, #0F2A44, #285c8d); font-size: 1.2rem; border: none; color: white; font-weight: 500; cursor: pointer;">
+                 Enroll Now </li></a>
+        </ul></div>
+    </div>
+    <section id="mainpage">
+    <center><h2 style="margin-top: 64px; font-weight: 500;">From Coding to Accounting</h2></center>
+    <center><h1 style="font-size: 3.2rem; margin-top: -20px;color: #173450;">Learn Web Development and Tally Prime</h1></center>
+    <center><h2 style="font-weight: 400; margin-top: 50px; color: rgb(68, 67, 67);">Professional courses with lectures, notes and hands-on projects</h2></center>
+    <center>
+        <a href="LMS-courses.html" style="text-decoration: none;"><button id="button" type="button" style="font-size: 1.8rem; padding: 12px 20px 14px 20px; border-radius: 10px; border: none; outline: none;
+        background: linear-gradient(to bottom right, #0F2A44, #285c8d); color: rgb(232, 231, 231); margin-top: 18px; cursor: pointer;">
+            Browse Courses &rarr;
+        </button></a>
+    </center>
+    <center>
+        <p style="font-size: 1.2rem; width: 1000px; margin-top: 50px; color: rgb(68, 67, 67);;">
+            At Yathaarth Digital Campus, learning isn’t just about theory it’s about building real skills you can apply immediately. 
+           </p><br><br><br><br><br><br><br></section>
+           <center><span style="color:rgb(113, 111, 111); font-size: .9rem;">© 2026 Yathaarth Digital Campus. All rights reserved.</span></center>
+    </center>
+</body>
+</html>
